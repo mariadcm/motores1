@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class moeda : MonoBehaviour
 {
+    public int velocidadeGiro = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,14 @@ public class moeda : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+   transform.Rotate(Vector3.forward, velocidadeGiro * Time.deltaTime);  
     }
+
+    private void OnTriggerEnter(Collider other)
+{
+    if (other.tag == "player")
+    { 
+        Destroy(gameObject);
+    }
+}
 }
