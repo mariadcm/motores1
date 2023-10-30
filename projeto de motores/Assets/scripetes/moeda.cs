@@ -19,7 +19,7 @@ public class moeda : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
 {
-    if (other.tag == "player")
+    if (other.tag == "Player")
     { 
         Destroy(gameObject);
     }
