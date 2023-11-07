@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         restantes = FindObjectsOfType<moeda>().Length;
+
+        hud.text = $"Moedas restantes: {restantes}";
     }
 
     // Update is called once per frame
