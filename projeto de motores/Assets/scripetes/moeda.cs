@@ -8,20 +8,21 @@ public class moeda : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-   transform.Rotate(Vector3.forward, velocidadeGiro * Time.deltaTime);  
+        transform.Rotate(Vector3.forward, velocidadeGiro * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
-{
-    if (other.tag == "Player")
-    { 
-        Destroy(gameObject);
+    {
+        if (other.tag == "Player")
+        {
+            FindObjectOfType<GameManager>().SubtrairMoedas(1);
+            Destroy(gameObject);
+        }
     }
-}
 }
